@@ -12,8 +12,8 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#1c1520",
     icons: [
       { src: "/icon.svg", type: "image/svg+xml", sizes: "any" },
-      { src: "/icon-192.png", type: "image/png", sizes: "192x192" },
-      { src: "/icon-512.png", type: "image/png", sizes: "512x512" },
+      { src: "https://cdn.playsunrise.net/site/icon-192.png", type: "image/png", sizes: "192x192" },
+      { src: "https://cdn.playsunrise.net/site/icon-512.png", type: "image/png", sizes: "512x512" },
     ],
   };
 }

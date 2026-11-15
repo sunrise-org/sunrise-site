@@ -31,7 +31,7 @@ export async function Hero({ locale }: { locale: Locale }) {
         <div className="@container max-w-[28rem]">
           <p className="rise inline-flex flex-wrap items-center gap-x-2 gap-y-1.5 rounded-full border border-line bg-surface/70 py-1 pr-3.5 pl-2 text-[13px] text-muted" style={delay(0)}>
             <span className="inline-flex items-center gap-2">
-              <Image src="/minecraft.webp" alt="" width={64} height={71} className="h-[18px] w-auto" />
+              <Image src="https://cdn.playsunrise.net/site/minecraft.webp" alt="" width={64} height={71} className="h-[18px] w-auto" />
               Minecraft: Java Edition 26.3
             </span>
             <Dot className="hidden sm:inline" />

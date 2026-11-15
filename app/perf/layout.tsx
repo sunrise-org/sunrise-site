@@ -8,7 +8,7 @@ import "../globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: t("meta.title"),
-  icons: "/perf/sunrise-64.png",
+  icons: "https://cdn.playsunrise.net/site/perf/sunrise-64.png",
   description: t("meta.description"),
 };
 

@@ -4,7 +4,7 @@ Sunrise plays like vanilla out of the box. This page covers the settings that ar
 
 The game's menus are vanilla's. Sunrise adds its own settings to vanilla's **Options** screen the way mods do: **Sunrise Settings...** and **Mods...** take the last two buttons of the grid. **Sunrise Settings** opens Graphics, Advanced Graphics, Controller Settings, Extras and Mods, each a screen of vanilla's buttons and sliders. The graphics buttons are also at the top of **Video Settings**, and Controller Settings at the bottom of **Controls**.
 
-![Video Settings, with Sunrise's graphics buttons at the top](/media/settings-800.webp)
+![Video Settings, with Sunrise's graphics buttons at the top](https://cdn.playsunrise.net/site/media/settings-800.webp)
 
 ## Graphics: presets, Simple and Advanced
 

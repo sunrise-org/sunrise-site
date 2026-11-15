@@ -35,7 +35,7 @@ browsers fetch nothing from a font service.
 
 | File | Source | Licence |
 | --- | --- | --- |
-| `app/icon.svg`, `app/favicon.ico`, `app/apple-icon.png`, `public/icon-192.png`, `public/icon-512.png`, `public/perf/sunrise-64.png` | Sunrise's mark (sun and three sparks over an indigo ground bar), drawn on a 16×16 pixel grid by the Sunrise project | The Sunrise project's original work |
+| `app/icon.svg`, `app/favicon.ico`, `app/apple-icon.png`, `cdn.playsunrise.net/site/icon-192.png`, `cdn.playsunrise.net/site/icon-512.png`, `cdn.playsunrise.net/site/perf/sunrise-64.png` | Sunrise's mark (sun and three sparks over an indigo ground bar), drawn on a 16×16 pixel grid by the Sunrise project | The Sunrise project's original work |
 | `public/og.png` | Rendered by `scripts/shots.mjs` from `public/og.html`: the mark, a headline and the faint wordmark, in Geist | MIT for the layout; the fonts as listed here |
 
 No Minecraft logo or wordmark appears anywhere on the site, in images or as text styling.
@@ -43,7 +43,7 @@ GitHub and Discord appear only as plain text links, without their logos.
 
 ## The pixel art
 
-| Files in `public/media/` | Source | Licence |
+| Files in `cdn.playsunrise.net/site/media/` | Source | Licence |
 | --- | --- | --- |
 | `stone-light.png`, `stone-dark.png` | The page's stone texture, drawn in code by `scripts/art.mjs` from the page colours of `crates/horizon-theme` | MIT, Horizon's original work |
 | `scene-light.png`, `scene-dark.png` | The hero's landscape (a dawn and a sunset with Horizon's sliced sun), drawn in code by `scripts/art.mjs`, the same drawing as the launcher's Home banner (`launcher/src/art.rs`) | MIT, Horizon's original work |
@@ -59,7 +59,7 @@ own copy of Minecraft: Java Edition 26.3, at the default graphics settings and w
 (the game last captured on 2026-10-17, the menus on 2026-10-22). Converted to WebP at 1600 and 800 pixels wide
 by `scripts/assets.mjs`.
 
-| Files in `public/media/` | Source | What it shows |
+| Files in `cdn.playsunrise.net/site/media/` | Source | What it shows |
 | --- | --- | --- |
 | `launcher*.webp` | `docs/media/launcher-play.png` | The Horizon launcher's Play page (no background image) |
 | `settings*.webp` | `docs/media/settings-simple.png` | Video Settings, with Horizon's graphics buttons at the top |
@@ -74,7 +74,7 @@ files: players need their own legally obtained copy of Minecraft: Java Edition.
 
 ### The launcher's Servers page
 
-| Files in `public/media/docs/` | Source | What it shows |
+| Files in `cdn.playsunrise.net/site/media/docs/` | Source | What it shows |
 | --- | --- | --- |
 | `servers-create.webp`, `servers-dashboard.webp`, `servers-invite.webp`, `servers-backups.webp` | Screenshots of the Horizon launcher's Servers page (a debug build on Linux, with made-up addresses, names and `@example.com` emails), converted to WebP | The Create a server dialog, a running server, a Tailscale invitation, the Backups tab |
 

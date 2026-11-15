@@ -21,10 +21,10 @@ import {
 } from "@/components/site";
 
 const SCREENSHOTS = [
-  "/media/nether.webp",
-  "/media/village-800.webp",
-  "/media/night-800.webp",
-  "/media/underwater.webp",
+  "https://cdn.playsunrise.net/site/media/nether.webp",
+  "https://cdn.playsunrise.net/site/media/village-800.webp",
+  "https://cdn.playsunrise.net/site/media/night-800.webp",
+  "https://cdn.playsunrise.net/site/media/underwater.webp",
 ];
 
 // The home page in each language: app/(en)/page.tsx and app/es/page.tsx.
@@ -53,7 +53,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
               "@id": ORGANIZATION_ID,
               name: SITE_NAME,
               url: SITE_URL,
-              logo: absolute("/icon-512.png"),
+              logo: "https://cdn.playsunrise.net/site/icon-512.png",
               sameAs: SAME_AS,
             },
             {
@@ -71,7 +71,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
                 "A legally obtained copy of Minecraft: Java Edition 26.3",
               downloadUrl: absolute(DOWNLOAD_URL),
               releaseNotes: absolute("/releases"),
-              screenshot: SCREENSHOTS.map(absolute),
+              screenshot: SCREENSHOTS,
               offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
               isAccessibleForFree: true,
               license: "https://opensource.org/license/mit",

@@ -532,7 +532,7 @@ export function HomeView({ api }: { api: Api }) {
               {
                 id: "java",
                 label: "Java Edition",
-                icon: <Image src="/media/launcher/minecraft-java.webp" alt="" width={18} height={18} className="rounded-[5px]" />,
+                icon: <Image src="https://cdn.playsunrise.net/site/media/launcher/minecraft-java.webp" alt="" width={18} height={18} className="rounded-[5px]" />,
               },
             ]}
           />

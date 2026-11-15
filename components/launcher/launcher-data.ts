@@ -53,12 +53,12 @@ export const NAV: { id: View; label: string }[] = [
 export const GAME_FOLDER = "~/.local/share/horizon";
 
 export const LOGOS: Record<string, Logo> = {
-  grass: { src: "/media/launcher/grass-block.webp", bare: true },
-  java: { src: "/media/launcher/minecraft-java.webp" },
-  neoforge: { src: "/media/launcher/neoforge.webp", pixel: true },
-  fabric: { src: "/media/launcher/fabric.webp", pixel: true },
-  quilt: { src: "/media/launcher/quilt.webp", pixel: true },
-  forge: { src: "/media/launcher/forge.webp" },
+  grass: { src: "https://cdn.playsunrise.net/site/media/launcher/grass-block.webp", bare: true },
+  java: { src: "https://cdn.playsunrise.net/site/media/launcher/minecraft-java.webp" },
+  neoforge: { src: "https://cdn.playsunrise.net/site/media/launcher/neoforge.webp", pixel: true },
+  fabric: { src: "https://cdn.playsunrise.net/site/media/launcher/fabric.webp", pixel: true },
+  quilt: { src: "https://cdn.playsunrise.net/site/media/launcher/quilt.webp", pixel: true },
+  forge: { src: "https://cdn.playsunrise.net/site/media/launcher/forge.webp" },
 };
 
 export const ICON_COLORS = ["#6b4bff", "#3b82f6", "#14b8a6", "#22c55e", "#eab308", "#f97316", "#ef4444", "#8b8a99"];
@@ -98,10 +98,10 @@ export const PLAYER = "Player46008";
 export const playerHead = (name: string, size = 64) => `https://mc-heads.net/avatar/${encodeURIComponent(name)}/${size}`;
 
 const SHOTS: Shot[] = [
-  { src: "/media/village.webp", name: "2026-10-17_19.04.12.png" },
-  { src: "/media/underwater.webp", name: "2026-10-17_19.21.40.png" },
-  { src: "/media/nether.webp", name: "2026-10-17_19.36.05.png" },
-  { src: "/media/night-800.webp", name: "2026-10-17_20.02.51.png" },
+  { src: "https://cdn.playsunrise.net/site/media/village.webp", name: "2026-10-17_19.04.12.png" },
+  { src: "https://cdn.playsunrise.net/site/media/underwater.webp", name: "2026-10-17_19.21.40.png" },
+  { src: "https://cdn.playsunrise.net/site/media/nether.webp", name: "2026-10-17_19.36.05.png" },
+  { src: "https://cdn.playsunrise.net/site/media/night-800.webp", name: "2026-10-17_20.02.51.png" },
 ];
 
 const FALLBACK_NIGHTLY: Nightly = {

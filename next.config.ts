@@ -20,6 +20,8 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ["202.61.226.46"],
   images: {
     remotePatterns: [
+      // The site's images on R2 (sunrise-assets), served from cdn.playsunrise.net.
+      { protocol: "https", hostname: "cdn.playsunrise.net", pathname: "/site/**" },
       { protocol: "https", hostname: "avatars.githubusercontent.com", pathname: "/u/**", search: "?v=4" },
       { protocol: "https", hostname: "avatars.githubusercontent.com", pathname: "/*", search: "?size=128" },
       // The hub's People tab: Discord avatars, as Kira's /staff.json gives them (components/org-chart.ts checks the form).

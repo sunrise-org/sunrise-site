@@ -30,7 +30,7 @@ Choose **Create a server**. To use a server folder you already have, choose **Ad
 
 Everything has a default, so ticking the EULA and choosing **Create** makes a friends-only survival world that checks Minecraft accounts. You can change all of it later, **Check Minecraft accounts** included, on the server's **Settings** tab.
 
-![The Create a server dialog](/media/docs/servers-create.webp)
+![The Create a server dialog](https://cdn.playsunrise.net/site/media/docs/servers-create.webp)
 
 ### Start it and watch it
 
@@ -43,7 +43,7 @@ Open the server with **Open** on its row. At the top, a line says whether it is 
 
 The **Overview** tab has the server's console, with a command line: type a command and press Enter. If the game crashes, the launcher restarts it by itself and says so ("The game crashed N times and was restarted by itself").
 
-![A running server's page in the launcher](/media/docs/servers-dashboard.webp)
+![A running server's page in the launcher](https://cdn.playsunrise.net/site/media/docs/servers-dashboard.webp)
 
 ### Let your friends join
 
@@ -58,7 +58,7 @@ For friends elsewhere, the page offers **Friends over the internet** through [Ta
 
 Sunrise never turns on Tailscale Funnel: the server is not put on the public internet. The other way is to forward TCP port 25565 on your router to the computer.
 
-![Inviting a friend through Tailscale](/media/docs/servers-invite.webp)
+![Inviting a friend through Tailscale](https://cdn.playsunrise.net/site/media/docs/servers-invite.webp)
 
 ### Players
 
@@ -76,7 +76,7 @@ The **Backups** tab has **Back up now**, and **Back up automatically** (every 6 
 
 Under **This server's Sunrise**, **Check for updates** and **Update now** move the server to the newest release. The world is backed up first, and the server goes back to the old release by itself if the new one does not start.
 
-![A server's Backups tab](/media/docs/servers-backups.webp)
+![A server's Backups tab](https://cdn.playsunrise.net/site/media/docs/servers-backups.webp)
 
 ## From the command line
 

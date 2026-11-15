@@ -26,9 +26,9 @@ const DIFFICULTIES: ServerDraft["difficulty"][] = ["Peaceful", "Easy", "Normal",
 const FIELD_LG = "h-12 w-full rounded-[12px] bg-white/[0.06] px-4 text-[15px] outline-none transition-colors placeholder:text-white/35 hover:bg-white/[0.08] focus:bg-white/[0.1]";
 const chosen = (on: boolean) => (on ? "bg-white/[0.12]" : "bg-white/[0.04] hover:bg-white/[0.07]");
 const COVERS: Record<string, string> = {
-  Survival: "/media/village.webp",
-  Creative: "/media/underwater.webp",
-  Adventure: "/media/nether.webp",
+  Survival: "https://cdn.playsunrise.net/site/media/village.webp",
+  Creative: "https://cdn.playsunrise.net/site/media/underwater.webp",
+  Adventure: "https://cdn.playsunrise.net/site/media/nether.webp",
 };
 
 function Section({ title, aside, children }: { title: string; aside?: ReactNode; children: ReactNode }) {
