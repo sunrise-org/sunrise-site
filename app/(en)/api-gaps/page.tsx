@@ -5,8 +5,8 @@ import { getTeamPulls } from "@/lib/api-gaps/team-prs";
 
 export const metadata = {
   ...pageMetadata({
-    title: "Native mod API gaps · Sunrise",
-    description: "Which native mod API capabilities are on the arismoko/horizon main, which have work in review, and where to start on a gap.",
+    title: "Sunrise Gaps: what works and what is missing",
+    description: "Where Sunrise stands: what has shipped, what is in progress and what is planned, and every native mod API capability with its status.",
     path: "/api-gaps",
   }),
   robots: { index: false, follow: false },

@@ -22,8 +22,10 @@ cookies. The only requests to other hosts are the browser's calls to `api.github
 
 | File | Source | Licence |
 | --- | --- | --- |
-| Geist and Geist Mono (body text and code, `app/layout.tsx`) | Geist by The Geist Project Authors (github.com/vercel/geist-font), through `next/font/google` | SIL Open Font License 1.1 |
-| Sora (headings, `components/site-shell.tsx`) | Sora by The Sora Project Authors (github.com/sora-xor/sora-font), through `next/font/google` | SIL Open Font License 1.1 |
+| Inter (text, `components/site-shell.tsx`) | Inter by The Inter Project Authors (github.com/rsms/inter), through `next/font/google` | SIL Open Font License 1.1 |
+| Space Grotesk (headings, `components/site-shell.tsx`) | Space Grotesk by The Space Grotesk Project Authors (github.com/floriankarsten/space-grotesk), through `next/font/google` | SIL Open Font License 1.1 |
+| Silkscreen (small labels, `components/site-shell.tsx`) | Silkscreen by Jason Kottke, through `next/font/google` | SIL Open Font License 1.1 |
+| JetBrains Mono (labels and code, `components/site-shell.tsx`) | JetBrains Mono by The JetBrains Mono Project Authors (github.com/JetBrains/JetBrainsMono), through `next/font/google` | SIL Open Font License 1.1 |
 | `assets/fonts/BricolageGrotesque-Medium.ttf`, `BricolageGrotesque-SemiBold.ttf` (share cards, `components/og-card.tsx`) | Bricolage Grotesque 1.001, as published on Google Fonts | SIL Open Font License 1.1, shipped as `assets/fonts/OFL-BricolageGrotesque.txt` |
 
 The fonts are self-hosted: `next/font` downloads them when the site is built and serves them from playsunrise.net, so

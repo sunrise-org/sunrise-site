@@ -272,4 +272,4 @@ Details: [A mod's own ingredient kinds](/docs/modding/how-to/items/ingredient-ki
 
 - **Ingredient kinds beyond the built-ins.** Sunrise reads `neoforge:compound`, `neoforge:intersection`, `neoforge:difference`, `neoforge:components`, `neoforge:block_tag` and `neoforge:custom_display`. For another kind, supply your own hooks as above. See [Built-in item ingredients](/docs/modding/how-to/native-mods/builtin-item-ingredients).
 - **A recipe type of your own** with its own station. **Partly:** register a recipe type and a raw serializer first; an unregistered serializer refuses the recipe load. The registered raw recipes keep their JSON, but your station owns matching and its menu. Read them with `Host::recipes_of_type` and cache definitions after publication: [Recipe serializers and recipe types](/docs/modding/crafting-recipe-kinds), [Cache recipe definitions](/docs/modding/how-to/items/reload-stable-recipes) and [Reading recipe rules](/docs/modding/how-to/items/recipe-rules).
-- More gaps by area: [API gaps](/api-gaps).
+- More gaps by area: [Sunrise Gaps](/api-gaps).

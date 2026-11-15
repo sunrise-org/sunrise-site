@@ -14,12 +14,12 @@ const MEMBERS = [
 export function ModdingTeamPage() {
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-6 pt-32 pb-24 sm:pt-40 lg:px-10">
-      <p className="text-sm font-medium text-muted">Sunrise modding</p>
+      <p className="eyebrow">Sunrise modding</p>
       <h1 className="mt-4 font-display text-[clamp(2.25rem,6vw,4rem)] leading-[1.04] font-semibold tracking-[-0.035em] text-foreground">
         The <span className="text-accent">modding team</span>
       </h1>
       <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty text-muted">
-        The people behind the typed mod API, the <code className="font-mono text-[0.9em] text-[#ffe6f0]">.hmod</code> file and the{" "}
+        The people behind the typed mod API, the <code className="font-mono text-[0.9em] text-[#ffe2cc]">.hmod</code> file and the{" "}
         <Link href="/docs/make-a-mod" className="sun-link text-accent-ink">
           modding guides
         </Link>

@@ -1,9 +1,9 @@
 import type { CSSProperties } from "react";
 import { getReleases, RELEASES_URL, type Release, type ReleaseKind } from "@/components/github-releases";
 import { GAME_REPO } from "@/components/game-repo";
-import { HorizonScene } from "@/components/horizon-scene";
 import { format, getMessages, NUMBER_LOCALE, rich, type Locale, type Messages } from "@/components/i18n";
 import { DownloadIcon, ExternalLinkIcon, GitHubIcon, MoonIcon } from "@/components/icons";
+import { DustField } from "@/components/fx/dust-field";
 import { ReleaseItem, ReleaseList, ReleaseViews } from "@/components/release-seen";
 
 type T = Messages["releases"];
@@ -11,11 +11,11 @@ type T = Messages["releases"];
 const delay = (ms: number) => ({ "--delay": `${ms}ms` }) as CSSProperties;
 
 const KINDS: { kind: ReleaseKind; chip: string }[] = [
-  { kind: "horizon", chip: "bg-brand/25 text-accent-ink" },
+  { kind: "horizon", chip: "bg-neon/25 text-accent-ink" },
   { kind: "launcher", chip: "bg-lavender text-muted" },
   {
     kind: "nightly",
-    chip: "bg-[linear-gradient(100deg,#3a1233,#7a2350)] text-accent-ink shadow-[0_0_12px_-2px_rgba(255,90,168,0.45)] ring-1 ring-accent/25 ring-inset",
+    chip: "bg-[linear-gradient(100deg,#3a2232,#5a2f3a)] text-accent-ink shadow-[0_0_12px_-2px_rgba(255,138,92,0.45)] ring-1 ring-accent/25 ring-inset",
   },
 ];
 
@@ -62,7 +62,7 @@ function ReleaseSummary({ release, locale, t }: { release: Release; locale: Loca
       {headline && (
         <span className="mt-1.5 block text-[15px] text-pretty text-muted group-data-seen:text-muted">{headline}</span>
       )}
-      <span className="mt-1.5 block text-sm text-muted">
+      <span className="mt-1.5 block font-mono text-[12.5px] text-dim">
         <time dateTime={release.published}>{when(locale, release.published)}</time>
         <Dot />
         {release.tag}
@@ -115,6 +115,38 @@ function ReleaseBody({ release, t, newTab }: { release: Release; t: T; newTab: s
   );
 }
 
+// The newest builds as a terminal would list them, beside the heading.
+function BuildLog({ releases, locale, t }: { releases: Release[] | null; locale: Locale; t: T }) {
+  const day = new Intl.DateTimeFormat(NUMBER_LOCALE[locale], { month: "short", day: "numeric", timeZone: "UTC" });
+  return (
+    <figure className="term rise" style={delay(200)} aria-label={t.log.label}>
+      <div className="flex items-center gap-2 border-b border-[#33263a] px-4 py-3 font-mono text-xs text-dim">
+        <span className="text-[#4cb782]">$</span> {t.log.command}
+      </div>
+      <ul className="px-4 py-3 font-mono text-[12.5px] leading-[2]">
+        {releases && releases.length > 0 ? (
+          releases.slice(0, 6).map((r) => (
+            <li key={r.id} className="term-line grid grid-cols-[5.5rem_1fr_auto] gap-3">
+              <span className={r.kind === "nightly" ? "text-accent" : r.kind === "launcher" ? "text-[#7cc4ff]" : "text-[#4cb782]"}>
+                {t.kinds[r.kind].toLowerCase()}
+              </span>
+              <span className="truncate text-[#f0ddd4]">{r.tag}</span>
+              <time dateTime={r.published} className="text-dim">
+                {day.format(new Date(r.published))}
+              </time>
+            </li>
+          ))
+        ) : (
+          <li className="text-dim">{t.log.empty}</li>
+        )}
+        <li>
+          <span className="term-caret" />
+        </li>
+      </ul>
+    </figure>
+  );
+}
+
 // /releases in each language: app/(en)/releases/page.tsx and app/es/releases/page.tsx. Release names and notes stay as
 // GitHub has them (English).
 export async function ReleasesPage({ locale }: { locale: Locale }) {
@@ -123,13 +155,13 @@ export async function ReleasesPage({ locale }: { locale: Locale }) {
 
   return (
     <main>
-      <section className="relative isolate flex min-h-[85svh] flex-col overflow-hidden">
-        <HorizonScene className="absolute inset-0 -z-10" wideSun={{ x: 0.74, scale: 1.5, rise: 0.6 }} />
+      <section className="relative isolate flex flex-col">
+        <DustField className="absolute inset-0 -z-10 h-full w-full fade-bottom" />
         <div aria-hidden className="h-18 shrink-0" />
 
-        <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-6 pt-12 pb-10 lg:px-10 lg:pt-28">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-6 pt-16 pb-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,30rem)] lg:px-10 lg:pt-24">
           <div className="max-w-2xl">
-            <p className="rise flex items-center text-sm font-medium text-muted" style={delay(0)}>
+            <p className="rise eyebrow" style={delay(0)}>
               {t.eyebrow}
               <Dot />
               <span className="inline-flex items-center gap-2">
@@ -138,7 +170,7 @@ export async function ReleasesPage({ locale }: { locale: Locale }) {
               </span>
             </p>
             <h1
-              className="rise mt-5 font-display text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.02] font-semibold tracking-[-0.035em] text-foreground"
+              className="rise mt-5 font-display text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.04] font-semibold tracking-[-0.035em]"
               style={delay(80)}
             >
               <span className="block">{t.title}</span>
@@ -150,7 +182,7 @@ export async function ReleasesPage({ locale }: { locale: Locale }) {
             <div className="rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center" style={delay(240)}>
               <a
                 href="#all-releases"
-                className="inline-flex h-12 items-center justify-center gap-2.5 rounded-[10px] bg-brand px-5 text-[15px] font-medium text-white transition-colors hover:bg-brand-hover"
+                className="sun-button inline-flex h-11 items-center justify-center gap-2.5 rounded-lg px-5 text-[14.5px] font-medium"
               >
                 {t.browse}
               </a>
@@ -158,7 +190,7 @@ export async function ReleasesPage({ locale }: { locale: Locale }) {
                 href={RELEASES_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-12 items-center justify-center gap-2.5 rounded-[10px] bg-lavender px-5 text-[15px] font-medium text-foreground backdrop-blur-sm transition-colors hover:bg-sky-surface"
+                className="inline-flex h-11 items-center justify-center gap-2.5 rounded-lg border border-[#3d2e3f] bg-sky-surface px-5 text-[14.5px] font-medium text-foreground transition-colors hover:border-[#5a4656] hover:bg-[#2b2030]"
               >
                 <GitHubIcon className="size-[17px]" />
                 {t.allOnGitHub}
@@ -166,14 +198,14 @@ export async function ReleasesPage({ locale }: { locale: Locale }) {
               </a>
             </div>
           </div>
-        </div>
 
-        <div aria-hidden className="h-[clamp(180px,30svh,320px)] shrink-0 lg:h-[clamp(130px,16svh,220px)]" />
+          <BuildLog releases={releases} locale={locale} t={t} />
+        </div>
       </section>
 
       <section id="all-releases" aria-labelledby="all-releases-title" className="scroll-mt-20 pt-16 pb-24 sm:pt-24 sm:pb-32">
         <div className="mx-auto w-full max-w-6xl px-6 lg:px-10">
-          <p className="text-sm font-medium text-muted">{t.changelog}</p>
+          <p className="eyebrow">{t.changelog}</p>
           <h2
             id="all-releases-title"
             className="mt-5 font-display text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] font-semibold tracking-[-0.03em] text-balance text-foreground"
@@ -182,7 +214,7 @@ export async function ReleasesPage({ locale }: { locale: Locale }) {
           </h2>
 
           {releases ? (
-            <div className="mt-10">
+            <div className="release-timeline mt-10">
               <ReleaseList t={t.list} entries={releases.map((r) => ({ id: r.id, kind: r.kind }))}>
                 {releases.map((r) => (
                   <li key={r.id} data-kind={r.kind} className="border-b border-line">

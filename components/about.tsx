@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ChipIcon, CodeIcon, DriveIcon, ExternalLinkIcon, SunriseLogo } from "@/components/icons";
 import { getMessages, type Locale } from "@/components/i18n";
 import { rich } from "@/components/i18n-text";
 import { CONTRIBUTORS_URL, MOD_API_AUTHOR_URL, MOD_API_REPO_URL, NEOFORGE_URL, PROFILER_HELPER_URL, UPSTREAM_URL } from "@/components/links";
+import { HarnessPanel } from "@/components/harness-panel";
 import { SunriseTeam } from "@/components/sunrise-team";
 import { profileUrl } from "@/components/team";
 
@@ -32,7 +32,7 @@ export function About({ locale }: { locale: Locale }) {
       <div className="mx-auto w-full max-w-6xl px-6 lg:px-10">
         <div className="grid lg:grid-cols-[minmax(0,25rem)_3rem_minmax(0,1fr)_3rem_23rem]">
           <div className="reveal relative z-20 lg:col-start-1 lg:row-start-1">
-            <p className="flex items-center gap-2.5 text-sm font-medium text-muted">
+            <p className="eyebrow">
               {t.eyebrow}
               <SunriseLogo className="h-4 w-auto" />
             </p>
@@ -41,6 +41,7 @@ export function About({ locale }: { locale: Locale }) {
               className="mt-5 font-display text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] font-semibold tracking-[-0.03em] text-balance text-foreground"
             >
               {t.title}
+              <span className="text-accent block">{t.titleAccent}</span>
             </h2>
           </div>
 
@@ -87,7 +88,7 @@ export function About({ locale }: { locale: Locale }) {
               href={CONTRIBUTORS_URL}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-1.5 text-[15px] font-medium text-accent-ink underline decoration-accent-ink/40 underline-offset-4 transition-colors hover:text-[#ffd2e4] hover:decoration-[#ffd2e4]"
+              className="mt-6 inline-flex items-center gap-1.5 text-[15px] font-medium text-accent-ink underline decoration-accent-ink/40 underline-offset-4 transition-colors hover:text-[#ffc49a] hover:decoration-[#ffc49a]"
             >
               {t.contributors}
               <ExternalLinkIcon className="size-4" />
@@ -96,15 +97,9 @@ export function About({ locale }: { locale: Locale }) {
           </div>
 
           <div
-            className="reveal relative mt-10 h-[15rem] overflow-hidden [clip-path:inset(0_round_1rem)] sm:h-[17rem] lg:col-span-1 lg:col-start-5 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:h-auto"
+            className="reveal relative mt-10 self-start lg:sticky lg:top-28 lg:col-span-1 lg:col-start-5 lg:row-span-2 lg:row-start-1 lg:mt-0"
           >
-            <Image
-              src="/about-wallpaper.jpg"
-              alt={t.imageAlt}
-              fill
-              sizes="(min-width: 1024px) 39rem, 100vw"
-              className="-scale-x-100 object-cover object-[30%_center]"
-            />
+            <HarnessPanel caption={t.panelCaption} />
           </div>
         </div>
 

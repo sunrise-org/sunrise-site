@@ -35,9 +35,7 @@ const START_HERE = [
 
 export function DocView({ doc, prev, next, children }: { doc: Doc; prev: Doc | null; next: Doc | null; children?: ReactNode }) {
   const headings = doc.headings.filter((h) => h.level === 2);
-  const toc = doc.slug === "index"
-    ? [{ id: "modding-cookbook", text: "Modding cookbook" }, ...headings, { id: "docs-team", text: "Meet the Sunrise team" }]
-    : headings;
+  const toc = headings;
   const showToc = toc.length >= 4;
   return (
     <div key={doc.slug} className={`docs-page ${showToc ? "min-[80rem]:grid min-[80rem]:grid-cols-[minmax(0,1fr)_13rem] min-[80rem]:gap-12" : ""}`}>
@@ -74,27 +72,6 @@ export function DocView({ doc, prev, next, children }: { doc: Doc; prev: Doc | n
                 </Link>
               ))}
             </nav>
-            <section className="mt-10" aria-labelledby="modding-cookbook">
-              <h2 id="modding-cookbook" className="scroll-mt-28 font-display text-2xl font-semibold">Modding cookbook</h2>
-              <p className="mt-2 text-muted">Pick something to make. Each recipe takes you from the files to a game you can try.</p>
-              <div className="docs-cards mt-4 grid gap-3 sm:grid-cols-2">
-                <Link href="/docs/build-your-first-block" className="glass-panel glass-sky soft-press rounded-xl border border-line p-5 focus-visible:outline-2 focus-visible:outline-accent">
-                  <span className="text-xs font-medium text-accent-ink">DATA & ASSETS</span>
-                  <span className="mt-2 block font-display text-xl font-semibold">A block that glows and drops</span>
-                  <span className="mt-2 block text-sm leading-relaxed text-muted">Build Glowing Amethyst with a model, a recipe, and a pickaxe drop.</span>
-                </Link>
-                <Link href="/docs/mod-code" className="glass-panel soft-press rounded-xl border border-line p-5 focus-visible:outline-2 focus-visible:outline-accent">
-                  <span className="text-xs font-medium text-accent-ink">RUST CODE</span>
-                  <span className="mt-2 block font-display text-xl font-semibold">Greet a player when they join</span>
-                  <span className="mt-2 block text-sm leading-relaxed text-muted">Add one Rust file to the same mod: a hook that sends a welcome message.</span>
-                </Link>
-                <Link href="/docs/modding" className="glass-panel soft-press rounded-xl border border-line p-5 focus-visible:outline-2 focus-visible:outline-accent sm:col-span-2">
-                  <span className="text-xs font-medium text-accent-ink">REFERENCE BOOK</span>
-                  <span className="mt-2 block font-display text-xl font-semibold">Everything the mod API can do</span>
-                  <span className="mt-2 block text-sm leading-relaxed text-muted">Ari’s own guide and reference: hooks, Parts, attachments, injections, the manifest and the registry.</span>
-                </Link>
-              </div>
-            </section>
           </>
         )}
 

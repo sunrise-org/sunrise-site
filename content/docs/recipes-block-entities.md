@@ -284,4 +284,4 @@ The `block_entity_submit` method of a `BlockEntityPart` draws each frame while t
 
 - Menu data, internal slots, retained handles: [Declaring a machine's menu data](/docs/modding/how-to/world/machine-menu-data).
 - Items, fluids and energy for pipes and machines: [Capabilities](/docs/modding/concepts/capabilities).
-- Gaps: [API gaps: blocks](/api-gaps#blocks) and [GUI](/api-gaps#gui).
+- Gaps: [Sunrise Gaps: blocks](/api-gaps#blocks) and [GUI](/api-gaps#gui).

@@ -14,7 +14,7 @@
       "mods": "Mods",
       "releases": "Releases",
       "docs": "Docs",
-      "apiGaps": "API gaps",
+      "apiGaps": "Sunrise Gaps",
       "faq": "FAQ"
     },
     "mainNav": "Main",
@@ -27,9 +27,9 @@
   "footer": {
     "disclaimer": "Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.",
     "whoTitle": "Who makes it",
-    "who": "Sunrise is made by its team: <members>Sunrise</members>, with <team>everyone who contributes</team>. It builds on <horizon>Horizon</horizon>, founded by Ludovic Marie, and the horizon-rust contributors. This site is made by <umut>Umut</umut> and <xmilon>Xmilon</xmilon>, hosted by <umut>Umut</umut>, and grew out of the Horizon site by <anthony>Anthony S</anthony>. Reach us on <github>GitHub</github>. Sunrise contains no Minecraft code, assets or data, and this site offers no game files: you need your own legally obtained copy of Minecraft: Java Edition. Minecraft is a trademark of Mojang Synergies AB.",
+    "who": "Sunrise is made by its team: <members>Sunrise</members>, with <team>everyone who contributes</team>. It builds on <horizon>Horizon</horizon>, founded by Ludovic Marie, and the horizon-rust contributors. This site is made by <umut>Umut</umut> and <xmilon>Xmilon</xmilon>, and hosted by <umut>Umut</umut>. Reach us on <github>GitHub</github>. Sunrise contains no Minecraft code, assets or data, and this site offers no game files: you need your own legally obtained copy of Minecraft: Java Edition. Minecraft is a trademark of Mojang Synergies AB.",
     "licencesTitle": "Licences",
-    "licences": "Sunrise's code is under the <mit>MIT licence</mit>, as Horizon's. The fonts are Geist, Geist Mono and Sora, with Bricolage Grotesque on share cards, under the <ofl>SIL Open Font License</ofl>. Every asset on this site is listed in LEGAL.md.",
+    "licences": "Sunrise's code is under the <mit>MIT licence</mit>, as Horizon's. The fonts are Inter, Space Grotesk, Silkscreen and JetBrains Mono, with Bricolage Grotesque on share cards, under the <ofl>SIL Open Font License</ofl>. Every asset on this site is listed in LEGAL.md.",
     "privacyTitle": "Privacy",
     "privacy": "This site sets no cookies for visitors and has no analytics or trackers. Opening a release stores a keyed hash of your IP address, and sharing a performance capture stores the file you upload; downloads come from GitHub, under <github>GitHub's privacy statement</github>. The launcher sends nothing unless you allow it: <telemetry>what it can send, and how to delete it</telemetry>.",
     "legal": {
@@ -38,7 +38,7 @@
     "linksLabel": "More",
     "links": {
       "faq": "FAQ",
-      "apiGaps": "API gaps",
+      "apiGaps": "Sunrise Gaps",
       "moddingTeam": "Modding team"
     },
     "madeInRust": "Made in the open, in Rust."
@@ -61,15 +61,19 @@
       "github": "View on GitHub",
       "launcher": "Launcher {version}",
       "downloadsTitle": "Downloads of the launcher from GitHub, all versions, updates included",
-      "downloads": "<n>{n}</n> downloads"
+      "downloads": "<n>{n}</n> downloads",
+      "facts": [
+        "Free",
+        "Open source, MIT",
+        "No Minecraft files shipped"
+      ]
     },
     "about": {
       "eyebrow": "What it is",
-      "title": "Same inputs, identical outputs.",
+      "title": "Rust underneath.",
       "fork": "Sunrise is a community fork of <upstream>Horizon</upstream>, made to ease development and to ship features that are still in development.",
-      "lead": "Sunrise, sometimes called Minecraft Rust Edition, rebuilds Minecraft: Java Edition 26.3 in Rust, one subsystem at a time, and holds every piece to the same inputs as the vanilla game until the outputs are identical.",
+      "lead": "Sunrise is Minecraft: Java Edition 26.3 rebuilt as a native Rust program. Underneath sits a new engine; on top, the game you already know, held piece by piece to the same inputs as vanilla until the outputs match.",
       "contributors": "Visit contributors",
-      "imageAlt": "A Minecraft windmill above a field of lavender",
       "points": {
         "copy": {
           "title": "Your own copy",
@@ -93,7 +97,9 @@
       },
       "team": {
         "title": "Team"
-      }
+      },
+      "titleAccent": "Vanilla on top.",
+      "panelCaption": "A differential harness, illustrated"
     },
     "community": {
       "eyebrow": "Community",
@@ -115,11 +121,11 @@
       }
     },
     "contributors": {
-      "eyebrow": "Horizon contributors",
+      "eyebrow": "Sunrise contributors",
       "title": "Built by {n} people.",
       "claude": "…and<claude/>Claude too",
       "titleFallback": "Built by its contributors.",
-      "lead": "Everyone with commits in Horizon, through {repo}, most commits first.",
+      "lead": "Everyone with commits in Sunrise, counting the work from before the fork, through {repo}. Most commits first.",
       "all": "All contributors on GitHub",
       "oneCommit": "1 commit",
       "commits": "{n} commits",
@@ -127,8 +133,7 @@
       "onePull": "1 pull request to this site",
       "pulls": "{n} pull requests to this site",
       "siteTitle": "This site",
-      "siteLead": "playsunrise.net is made by Xmilon and Umut, in {repo}, and grew out of the Horizon site.",
-      "originalSite": "Made the original Horizon site"
+      "siteLead": "playsunrise.net is made by Xmilon and Umut, in {repo}."
     },
     "parity": {
       "harnesses": "differential harnesses when we started: each drives the same inputs through Sunrise and through the vanilla client and server, and compares what comes out.",
@@ -210,14 +215,14 @@
       "title": "Download the Sunrise launcher: releases and nightlies",
       "description": "Download the Sunrise launcher for Windows, macOS and Linux. Every game, launcher and nightly release, with its notes and downloads, straight from GitHub."
     },
-    "eyebrow": "Releases",
-    "title": "Every release,",
-    "titleAccent": "as it ships.",
-    "lead": "Sunrise, its launcher and the nightly builds, straight from GitHub. Open one to read its notes; the ones you've opened are marked as seen.",
+    "eyebrow": "Changelog",
+    "title": "Fresh off the build.",
+    "titleAccent": "Every version, every note.",
+    "lead": "Every Sunrise build lands here straight from GitHub: the game, the launcher and the nightlies. Open one for its notes and downloads; the ones you've opened are marked as seen.",
     "browse": "Browse releases",
     "allOnGitHub": "All releases on GitHub",
-    "changelog": "Changelog",
-    "latest": "The latest {n} releases.",
+    "changelog": "Release log",
+    "latest": "{n} builds, newest first.",
     "latestFallback": "Releases are on GitHub.",
     "unreachable": "GitHub couldn't be reached just now. Every release is listed on <link>the releases page on GitHub</link>.",
     "kinds": {
@@ -243,6 +248,11 @@
       "markUnseen": "Mark as unseen",
       "oneView": "1 view",
       "views": "{n} views"
+    },
+    "log": {
+      "label": "The newest releases",
+      "command": "gh release list -R sunrise-org/horizon",
+      "empty": "GitHub isn't answering right now."
     }
   },
   "mods": {
@@ -378,7 +388,7 @@
   "faq": {
     "meta": {
       "title": "FAQ · Sunrise",
-      "description": "Answers about Sunrise: what it is, how it differs from Horizon, whether you need Minecraft, where the source is, which mods work and how to report a bug."
+      "description": "Answers about Sunrise: what it is, how it differs from Horizon, whether you need Minecraft, whether you can fork it, which mods work and how to report a bug."
     },
     "kicker": "FAQ",
     "titleA": "Questions,",
@@ -391,7 +401,7 @@
       },
       {
         "q": "How is it different from Horizon?",
-        "a": "Sunrise is a community fork of <horizon>Horizon</horizon>, which the horizon-rust contributors make, and it keeps Horizon's game as its base. The fork adds compatibility layers that run Java mods (Forge first, Fabric later), support for more than one game version, a built-in profiler, no ads and no telemetry: the launcher sends nothing unless you allow it. Some of this is still in progress; <releases>Releases</releases> lists what has shipped."
+        "a": "Sunrise is a fork of <horizon>Horizon</horizon> under new management: its own team runs it now, on top of Horizon's game. Sunrise has no monetary goal, so there are no ads and nothing to pay for, and no telemetry: the launcher sends nothing unless you allow it. The fork adds compatibility layers that run Java mods (Forge first, Fabric later), support for more than one game version and a built-in profiler. Some of this is still in progress; <gaps>Sunrise Gaps</gaps> shows where each part stands."
       },
       {
         "q": "Do I need to own Minecraft?",
@@ -403,7 +413,11 @@
       },
       {
         "q": "Which mods work?",
-        "a": "Content mods and native Rust mods from the <mods>Mods</mods> page work today. Running Java mods is in progress: Forge support is not finished and not every mod loads yet, and Fabric comes later. For the native mod API, <apigaps>API gaps</apigaps> shows what is covered, what is partial and what is missing."
+        "a": "Content mods and native Rust mods from the <mods>Mods</mods> page work today. Running Java mods is in progress: Forge support is not finished and not every mod loads yet, and Fabric comes later. For the native mod API, <apigaps>Sunrise Gaps</apigaps> shows what is covered, what is partial and what is missing."
+      },
+      {
+        "q": "Can I fork Sunrise?",
+        "a": "No. Sunrise is moving its own code to the <licence>PolyForm Shield 1.0.0</licence> licence, which lets you use and change it but not to build a project that competes with Sunrise; the code that came from Horizon keeps its MIT licence. You are welcome to build on Sunrise instead: make mods, resource packs, shader packs and modpacks, run servers, or send a pull request. Start with <docs>making a mod</docs>."
       },
       {
         "q": "How do I report a bug or contribute?",

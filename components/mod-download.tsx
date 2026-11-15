@@ -32,7 +32,7 @@ export function ModDownload({
         {url && (
           <a
             href={url}
-            className="inline-flex h-11 items-center gap-2.5 rounded-[10px] bg-brand px-5 text-[15px] font-medium text-white transition-colors outline-none hover:bg-brand-hover focus-visible:ring-2 focus-visible:ring-accent"
+            className="inline-flex h-11 items-center gap-2.5 rounded-[10px] bg-brand px-5 text-[15px] font-medium text-background transition-colors outline-none hover:bg-brand-hover focus-visible:ring-2 focus-visible:ring-accent"
           >
             <DownloadIcon className="size-[18px]" />
             Download

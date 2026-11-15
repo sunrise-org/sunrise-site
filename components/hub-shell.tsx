@@ -197,7 +197,7 @@ export function HubShell({
                 aria-pressed={detail === mode}
                 onClick={() => setDetail(mode)}
                 className={`h-7 rounded-md px-3 text-sm font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-                  detail === mode ? "bg-brand text-white" : "text-muted hover:text-foreground"
+                  detail === mode ? "bg-brand text-background" : "text-muted hover:text-foreground"
                 }`}
               >
                 {mode === "plain" ? "Simple" : "Technical"}
@@ -228,7 +228,7 @@ export function HubShell({
                     aria-pressed={area === a.id}
                     onClick={() => setArea(a.id)}
                     className={`inline-flex h-8 items-center gap-1.5 rounded-lg px-3 text-[13px] font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-                      area === a.id ? "bg-brand/30 text-accent-ink ring-1 ring-accent/40 ring-inset" : "bg-surface/80 text-muted hover:bg-lavender hover:text-foreground"
+                      area === a.id ? "bg-neon/30 text-accent-ink ring-1 ring-accent/40 ring-inset" : "bg-surface/80 text-muted hover:bg-lavender hover:text-foreground"
                     } ${count === 0 && area !== a.id ? "opacity-50" : ""}`}
                   >
                     {a.name}

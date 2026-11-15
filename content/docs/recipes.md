@@ -51,6 +51,6 @@ Every recipe starts with one of these:
 
 ## When something is missing
 
-- The [API gaps](/api-gaps) page lists what the mod API can't do yet, by area.
+- The [Sunrise Gaps](/api-gaps) page lists what the mod API can't do yet, by area.
 - The reference book's [How-to chapters](/docs/modding/how-to/content-mods) go deeper than these recipes.
 - The [mod API reference](/docs/modding/reference/api) explains how to read every hook and type.

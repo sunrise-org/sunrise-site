@@ -298,4 +298,4 @@ These two server-side hooks get snapshots and `event.tags`, not a full Host, to 
 - **Global loot modifier files** (`loot_modifiers`). **Not yet** applied. **Workaround:** `loot_table_load` or `loot_drops`, as above.
 - **Every context field populated for every kind of roll.** **Partly:** the typed fields above are there, some only for some rolls; always handle absent optional fields.
 - **Exploration maps from a custom function.** A function that asks for a map's structure search changes nothing in block and mob drops.
-- More gaps by area: [API gaps](/api-gaps).
+- More gaps by area: [Sunrise Gaps](/api-gaps).

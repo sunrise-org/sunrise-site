@@ -10,7 +10,9 @@ import { drifted, driftOf } from "@/lib/api-gaps/drift";
 import external from "@/lib/api-gaps/external.json";
 import { LIVE_GROUPS, summarize } from "@/lib/api-gaps/groups";
 import { BOARD_URL, blobUrl, commitUrl, refUrl, shortCommit, sourceLabel } from "@/lib/api-gaps/links";
+import { PROJECT, type ProjectState } from "@/lib/api-gaps/project";
 import { countByStatus, countLine, STATUSES } from "@/lib/api-gaps/status";
+import { DustField } from "@/components/fx/dust-field";
 import type { Capability, EvidenceGroup, EvidenceSummary, LiveEvidence, RefBaseline, RefState, Status, Sync } from "@/lib/api-gaps/types";
 
 const BADGE: Record<Status, string> = { Covered: "ag-covered", Partial: "ag-partial", Missing: "ag-missing", "Not applicable": "ag-na" };
@@ -21,6 +23,11 @@ const BAR: Record<Status, string> = {
   "Not applicable": "bg-white/35",
 };
 const CARD = "rounded-2xl border border-white/10 bg-white/[0.035]";
+const STATE: Record<ProjectState, string> = {
+  Shipped: "text-[#4cb782] border-[#4cb782]/30 bg-[#4cb782]/10",
+  "In progress": "text-[#f2c94c] border-[#f2c94c]/30 bg-[#f2c94c]/10",
+  Planned: "text-accent border-accent/30 bg-neon/10",
+};
 const H2 = "font-display text-[1.6rem] leading-tight font-semibold tracking-[-0.02em] text-white";
 
 const dayFormat = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
@@ -40,7 +47,7 @@ function Chevron() {
 
 function RefChip({ base, live }: { base: RefBaseline; live: RefState | undefined }) {
   const state = live?.state ?? base.state;
-  const tone = state === "open" ? "text-emerald-200" : state === "merged" ? "text-[#ffd2e4]" : "text-white/55";
+  const tone = state === "open" ? "text-emerald-200" : state === "merged" ? "text-[#ffc49a]" : "text-white/55";
   const holder = live ? (live.assignees.length ? `assigned to ${live.assignees.join(", ")}` : base.claim) : base.claim;
   return (
     <span className="ag-chip">
@@ -80,7 +87,7 @@ function CapabilityRow({ capability, sync, missing, refs }: { capability: Capabi
       ) : null}
       {reasons.length ? <p className="ag-wide text-sm text-amber-200/80">{reasons.join(". ")}.</p> : null}
       <details className="group ag-more">
-        <summary className="ag-sum text-[#ffd2e4]">
+        <summary className="ag-sum text-[#ffc49a]">
           <Chevron />
           Sources and counterpart
         </summary>
@@ -133,11 +140,55 @@ export function ApiGapsView({ sync, evidence, teamPulls }: { sync: Sync; evidenc
   const stale = sync.commit !== "" && !sync.fresh;
 
   return (
-    <main>
+    <main className="relative isolate">
+      <DustField className="absolute inset-x-0 top-0 -z-10 h-[34rem] w-full fade-bottom" />
       <article className="mx-auto w-full max-w-5xl px-6 pt-32 pb-20 text-[16px] leading-relaxed text-pretty text-white/70 sm:pt-40 sm:pb-28 lg:px-10">
-        <p className="text-sm font-medium text-white/60">{curated.eyebrow}</p>
-        <h1 className="mt-4 font-display text-[clamp(2.25rem,6vw,4rem)] leading-[1.04] font-semibold tracking-[-0.035em] text-white">{curated.title}</h1>
-        <p className="mt-6 max-w-3xl text-lg text-white/70">{curated.lede}</p>
+        <p className="eyebrow">Sunrise Gaps</p>
+        <h1 className="mt-4 font-display text-[clamp(2.25rem,6vw,4rem)] leading-[1.04] font-semibold tracking-[-0.035em] text-white">
+          <span className="block">What works,</span>
+          <span className="text-accent block pb-1">and what&apos;s missing.</span>
+        </h1>
+        <p className="mt-6 max-w-3xl text-lg text-white/70">
+          Where Sunrise stands today: what has shipped, what is being built and what comes later, then every capability of the
+          native mod API, row by row.
+        </p>
+
+        <section aria-labelledby="project" className="mt-12">
+          <h2 id="project" className={H2}>
+            The project
+          </h2>
+          <ul className="mt-5 overflow-hidden rounded-2xl border border-line">
+            {PROJECT.map((row) => {
+              const usable = total - counts["Not applicable"];
+              const detail = row.detail
+                .replace("{covered}", String(counts.Covered))
+                .replace("{total}", String(usable))
+                .replace("{partial}", String(counts.Partial));
+              return (
+                <li key={row.area} className="grid gap-x-6 gap-y-1 border-b border-line bg-surface px-5 py-4 last:border-b-0 sm:grid-cols-[14rem_7.5rem_1fr]">
+                  <span className="font-medium text-foreground">{row.area}</span>
+                  <span>
+                    <span className={`inline-flex rounded-md border px-2 py-0.5 font-mono text-[11.5px] ${STATE[row.state]}`}>{row.state}</span>
+                  </span>
+                  <span className="text-[15px] text-muted">
+                    {detail}
+                    {row.href && (
+                      <>
+                        {" "}
+                        <a href={row.href} className="sun-link text-accent-ink">
+                          {row.link}
+                        </a>
+                      </>
+                    )}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+
+        <h2 className={`${H2} mt-16`}>{curated.title}</h2>
+        <p className="mt-4 max-w-3xl text-white/70">{curated.lede}</p>
         <p className="mt-5 text-sm text-white/55">
           Statuses reviewed {reviewedOn} against <Ext href={commitUrl(curated.reviewed.commit)}>{shortCommit(curated.reviewed.commit)}</Ext>
           {" · "}
@@ -153,13 +204,13 @@ export function ApiGapsView({ sync, evidence, teamPulls }: { sync: Sync; evidenc
           {curated.docs}
         </p>
 
-        <aside className="mt-8 flex flex-col gap-4 rounded-2xl border border-[#ffd2e4]/30 bg-[#ffd2e4]/[0.08] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+        <aside className="mt-8 flex flex-col gap-4 rounded-2xl border border-[#ffc49a]/30 bg-[#ffc49a]/[0.08] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
           <p className="text-lg font-medium text-white">Want to help? Pick something from the project board and open a PR.</p>
           <a
             href={BOARD_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex shrink-0 items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#1d0f20] transition-colors hover:bg-[#ffe6f0]"
+            className="inline-flex shrink-0 items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#1c1520] transition-colors hover:bg-[#ffe2cc]"
           >
             Open the project board<span className="sr-only"> (opens in a new tab)</span>
           </a>
@@ -254,7 +305,7 @@ export function ApiGapsView({ sync, evidence, teamPulls }: { sync: Sync; evidenc
             </summary>
             <nav aria-label="Capability areas" className="mt-3 flex flex-wrap gap-2">
               {curated.areas.map((area) => (
-                <a key={area.id} href={`#${area.id}`} className="rounded-md border border-white/12 px-2.5 py-1 text-sm text-white/75 transition-colors hover:border-[#ffd2e4]/60 hover:text-white">
+                <a key={area.id} href={`#${area.id}`} className="rounded-md border border-white/12 px-2.5 py-1 text-sm text-white/75 transition-colors hover:border-[#ffc49a]/60 hover:text-white">
                   {area.name}
                 </a>
               ))}

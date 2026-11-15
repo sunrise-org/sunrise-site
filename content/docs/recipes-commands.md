@@ -178,7 +178,7 @@ If the commands you register depend on a setting that changes, call `host.comman
 
 - Selectors, sources and permissions in full: [Typed server commands](/docs/modding/how-to/entities/server-commands).
 - Running a vanilla command from code: `host.commands().run_command("time set day")` runs it as the console, with no output.
-- Gaps: [API gaps: commands](/api-gaps#commands).
+- Gaps: [Sunrise Gaps: commands](/api-gaps#commands).
 
 > [!NOTE]
 > Checked against the mod API at [arismoko/horizon `de8b4e2`](https://github.com/arismoko/horizon/tree/de8b4e2526df9d7f611515b78123a26a3914176f), which Sunrise merges. The hello, healing and mob-spawning Rust snippets were compile-checked against `horizon-mod-api`; they were not tested in game.

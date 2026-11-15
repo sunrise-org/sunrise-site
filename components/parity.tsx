@@ -61,7 +61,7 @@ export function Parity({ locale }: { locale: Locale }) {
   return (
     <section id="parity" aria-labelledby="parity-title" className="scroll-mt-14 pb-24 sm:pb-32">
       <div className="mx-auto w-full max-w-6xl px-6 lg:px-10">
-        <p className="reveal text-sm font-medium text-muted"></p>
+        <p className="reveal eyebrow"></p>
 
         <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:items-end lg:gap-16">
           <div className="reveal">

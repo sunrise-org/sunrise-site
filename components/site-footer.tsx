@@ -12,7 +12,7 @@ import { getMessages, LOCALES, rich, type Locale } from "@/components/i18n";
 import { localePath } from "@/components/i18n-text";
 import { LanguageSwitch } from "@/components/language-switch";
 import { GITHUB_URL, UPSTREAM_URL } from "@/components/links";
-import { ORIGINAL_SITE_MAKER, profileUrl, TEAM } from "@/components/team";
+import { profileUrl, TEAM } from "@/components/team";
 
 const LEGAL = [{ href: "/privacy", key: "privacy" }] as const;
 
@@ -109,7 +109,6 @@ export function SiteFooter({ locale }: { locale: Locale }) {
                 horizon: out(UPSTREAM_URL),
                 umut: out(profileUrl("UMCEKO")),
                 xmilon: out(profileUrl("Xmilon")),
-                anthony: out(ORIGINAL_SITE_MAKER.url),
                 github: out(GITHUB_URL),
               })}
             </p>

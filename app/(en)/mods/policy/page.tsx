@@ -12,7 +12,7 @@ export const metadata = pageMetadata({
 });
 
 const SOURCE = "https://github.com/sunrise-org/horizon-mods/blob/main/MOD-POLICY.md";
-const LINK = "text-[#ffd2e4] underline decoration-[#ffd2e4]/40 underline-offset-4 transition-colors hover:text-white";
+const LINK = "text-[#ffc49a] underline decoration-[#ffc49a]/40 underline-offset-4 transition-colors hover:text-white";
 
 export default async function PolicyPage() {
   const policy = await getModPolicy();

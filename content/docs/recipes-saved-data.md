@@ -242,7 +242,7 @@ Set `codec: None`. The value lives while the holder is loaded and is gone on unl
 - **NeoForge's extras:** a default that depends on the holder, a custom copy handler, saving only sometimes, sending to only some players, and partial sync updates. **Workaround:** decide in your code before calling `set`; attachments do not offer custom recipient filtering.
 - **Copying on mob conversion** is automatic for entries with a codec, regardless of `copy_on_death`. Unsaved entries stay on the removed mob. `living_conversion_post` sees the copy; a cancelled `living_conversion_pre` copies nothing.
 - **Data on an item stack** is not an attachment: use the stack's components.
-- More gaps: [API gaps: saved data](/api-gaps#saved-data) and [data attachments](/api-gaps#data-attachments).
+- More gaps: [Sunrise Gaps: saved data](/api-gaps#saved-data) and [data attachments](/api-gaps#data-attachments).
 
 ## Go deeper
 

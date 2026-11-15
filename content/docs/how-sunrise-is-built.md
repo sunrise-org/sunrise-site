@@ -5,7 +5,7 @@ Who writes Sunrise, how each change is checked, and why it is safe to run. You c
 ## Who writes the code
 
 - **Horizon**, the project Sunrise is forked from, was founded by Ludovic Marie.
-- **Sunrise** is made by its team: Umut, Xmilon, Juan Luci, Ari, levzzz, Isloka and others, with outside contributors.
+- **Sunrise** is made by its team: Umut, Xmilon, Ari and Isloka, with outside contributors.
 - **Much of the code is written with AI agents.** Some contributors write their code by hand.
 
 Agents always say what they are:

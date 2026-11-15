@@ -6,7 +6,7 @@ import {
 } from "@/components/i18n";
 import { DiscordIcon, GitHubIcon, ShieldIcon } from "@/components/icons";
 import { BUILD_URL, DISCORD_URL, GITHUB_URL } from "@/components/links";
-import { PixelAurora } from "@/components/pixel-aurora";
+import { DustField } from "@/components/fx/dust-field";
 
 const GLASS = {
   card: "glass-panel soft-press border border-line focus-visible:ring-accent",
@@ -59,11 +59,11 @@ export function Community({ locale }: { locale: Locale }) {
       aria-labelledby="community-title"
       className="relative isolate mb-8 scroll-mt-14 overflow-hidden py-16  sm:py-24"
     >
-      <PixelAurora className="absolute top-0 left-0 -z-10" />
+      <DustField className="absolute inset-0 -z-10 h-full w-full fade-y" />
 
       <div className="mx-auto w-full max-w-6xl px-6 lg:px-10">
         <div className="reveal">
-          <p className="text-sm font-medium text-muted">{t.eyebrow}</p>
+          <p className="eyebrow">{t.eyebrow}</p>
           <h2
             id="community-title"
             className="mt-5 font-display text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] font-semibold tracking-[-0.03em] text-balance text-foreground"

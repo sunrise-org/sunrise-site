@@ -5,7 +5,7 @@ import { githubFetch } from "@/components/github-api";
 import { format, getMessages, NUMBER_LOCALE, rich, type Locale } from "@/components/i18n";
 import { ClaudeIcon, ExternalLinkIcon } from "@/components/icons";
 import { MOD_API_REPO, MOD_API_REPO_URL } from "@/components/links";
-import { avatarUrl, memberOf, ORIGINAL_SITE_MAKER, profileUrl, SITE_MAKERS, SITE_REPO } from "@/components/team";
+import { avatarUrl, memberOf, profileUrl, SITE_MAKERS, SITE_REPO } from "@/components/team";
 
 // Include Horizon's inherited history alongside new contributions to Ari's fork.
 const REPO = MOD_API_REPO;
@@ -85,7 +85,6 @@ export async function Contributors({ locale }: { locale: Locale }) {
       avatar: avatarUrl(login),
       url: profileUrl(login),
     })),
-    { ...ORIGINAL_SITE_MAKER, detail: t.originalSite },
   ];
 
   return (
@@ -93,7 +92,7 @@ export async function Contributors({ locale }: { locale: Locale }) {
       <div className="mx-auto w-full max-w-6xl px-6 lg:px-10">
         <div className="reveal flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-medium text-white/60">{t.eyebrow}</p>
+            <p className="eyebrow">{t.eyebrow}</p>
             <h2
               id="contributors-title"
               className="group mt-5 font-display text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] font-semibold tracking-[-0.03em] text-balance text-white"
@@ -122,7 +121,7 @@ export async function Contributors({ locale }: { locale: Locale }) {
             href={`${MOD_API_REPO_URL}/graphs/contributors`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex shrink-0 items-center gap-1.5 text-[15px] font-medium text-accent-ink underline decoration-accent-ink/40 underline-offset-4 transition-colors hover:text-[#ffd2e4] hover:decoration-[#ffd2e4]"
+            className="inline-flex shrink-0 items-center gap-1.5 text-[15px] font-medium text-accent-ink underline decoration-accent-ink/40 underline-offset-4 transition-colors hover:text-[#ffc49a] hover:decoration-[#ffc49a]"
           >
             {t.all}
             <ExternalLinkIcon className="size-4" />

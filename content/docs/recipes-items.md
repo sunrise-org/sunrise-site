@@ -268,7 +268,7 @@ Use `Text::translate("tooltip.my_mod.wand", vec![])` and a line in `en_us.json` 
 
 - **Behaviour tied to a vanilla item's class.** **Not yet:** a copy of the trident doesn't throw, and a copy of the bow doesn't draw. Components carry over; code-only behaviour doesn't. Fishing rods are the exception: a `minecraft:fishing_rod` copy works. **Workaround:** give the item `ItemPart` methods for the behaviour you need, as the wand does.
 - **Putting your items in vanilla's creative tabs** needs code: the client-side `build_creative_mode_tab_contents` hook. A tab of your own needs only a file, `data/my_mod/horizon/creative_tab/<name>.json`: `{ "title": "Ruby", "icon": "my_mod:ruby", "items": ["my_mod:ruby", "my_mod:ruby_block"] }`. Details: [Making a content mod](/docs/modding/how-to/content-mods).
-- More gaps: [API gaps: items](/api-gaps#items).
+- More gaps: [Sunrise Gaps: items](/api-gaps#items).
 
 > [!NOTE]
 > Checked against the mod API at [arismoko/horizon `de8b4e2`](https://github.com/arismoko/horizon/tree/de8b4e2526df9d7f611515b78123a26a3914176f), which Sunrise merges. The wand and its tooltip method were compile-checked together against `horizon-mod-api`. These recipes were not tried in the game.

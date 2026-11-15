@@ -211,4 +211,4 @@ The loot hooks themselves: [Loot tables](/docs/recipes-loot#a-loot-condition-of-
 
 - **Listing every tag.** **Not yet:** there is no call for it. **Workaround:** ask about the tags you know by name.
 - **A mod's own `placed_feature` tags in a biome modifier.** **Not yet:** `#tag` in a modifier's `features` reads vanilla's tags only. **Workaround:** list the features by id.
-- More gaps by area: [API gaps](/api-gaps).
+- More gaps by area: [Sunrise Gaps](/api-gaps).

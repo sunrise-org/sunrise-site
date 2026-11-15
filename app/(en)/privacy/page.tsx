@@ -10,7 +10,7 @@ export const metadata = pageMetadata({
 });
 
 const LINK =
-  "text-[#ffd2e4] underline decoration-[#ffd2e4]/40 underline-offset-4 transition-colors hover:text-white";
+  "text-[#ffc49a] underline decoration-[#ffc49a]/40 underline-offset-4 transition-colors hover:text-white";
 
 function Part({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
   return (
     <main>
       <article className="mx-auto w-full max-w-3xl px-6 pt-32 pb-20 text-[16px] leading-relaxed text-pretty text-muted sm:pt-40 sm:pb-28 lg:px-10">
-        <p className="text-sm font-medium text-muted">Privacy</p>
+        <p className="eyebrow">Privacy</p>
         <h1 className="mt-4 font-display text-[clamp(2.25rem,6vw,4rem)] leading-[1.04] font-semibold tracking-[-0.035em] text-foreground">
           <span className="block">This site keeps</span>
           <span className="text-accent block pb-1">almost nothing.</span>
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
         <Part title="Performance captures">
           <p>
             Opening a{" "}
-            <code className="font-mono text-[0.9em] text-[#ffe6f0]">
+            <code className="font-mono text-[0.9em] text-[#ffe2cc]">
               .hzperf
             </code>{" "}
             file on{" "}

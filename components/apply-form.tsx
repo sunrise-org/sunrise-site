@@ -84,7 +84,7 @@ export function ApplyForm() {
   } else if (!token) {
     body = (
       <p className="max-w-2xl text-lg leading-relaxed text-white/70">
-        To apply for Support or Mod, run <code className="font-mono text-[#ffe6f0]">/apply</code> on Sunrise&apos;s Discord server: Kira DMs you a link to this form.
+        To apply for Support or Mod, run <code className="font-mono text-[#ffe2cc]">/apply</code> on Sunrise&apos;s Discord server: Kira DMs you a link to this form.
       </p>
     );
   } else if (error || !invite) {
@@ -103,8 +103,8 @@ export function ApplyForm() {
           {invite.role === "team" && (
             <>
               {" "}
-              If you linked your GitHub account with <code className="font-mono text-[#ffe6f0]">/link-github</code> and proved it with{" "}
-              <code className="font-mono text-[#ffe6f0]">/verify-github</code>, your merged pull requests in Sunrise are shown with your application.
+              If you linked your GitHub account with <code className="font-mono text-[#ffe2cc]">/link-github</code> and proved it with{" "}
+              <code className="font-mono text-[#ffe2cc]">/verify-github</code>, your merged pull requests in Sunrise are shown with your application.
             </>
           )}
         </p>

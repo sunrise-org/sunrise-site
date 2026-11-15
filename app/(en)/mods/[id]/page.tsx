@@ -36,7 +36,7 @@ import {
   type ModProject,
 } from "@/components/mods-logic";
 import { GitHubStars, ModIcon, Stars } from "@/components/mods-ui";
-import { PixelAurora } from "@/components/pixel-aurora";
+import { DustField } from "@/components/fx/dust-field";
 import { absolute, breadcrumbs, OPERATING_SYSTEMS, pageMetadata } from "@/components/site";
 
 export async function generateStaticParams() {
@@ -297,7 +297,7 @@ async function ModContent({ params }: Pick<PageProps<"/mods/[id]">, "params">) {
     <main>
       <ModJsonLd p={p} rating={rating} />
       <section className="relative isolate overflow-hidden pt-32 pb-12 sm:pt-40 sm:pb-16">
-        <PixelAurora moonTop={104} className="absolute top-0 left-0 -z-10" />
+        <DustField className="absolute inset-x-0 top-0 -z-10 h-[28rem] w-full fade-bottom" />
         <div className="mx-auto w-full max-w-6xl px-6 lg:px-10">
           <Link href="/mods" className="group inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-foreground">
             <span aria-hidden className="transition-transform group-hover:-translate-x-0.5">

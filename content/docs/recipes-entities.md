@@ -196,4 +196,4 @@ You write each goal as a type that implements `Goal`. How goals run, what they m
 
 - **A mob class of your own** (Java's `extends Monster`). **Not yet.** **Workaround:** copy the closest vanilla mob, then change it with attributes, sounds, goals and hooks such as `entity_tick_post` or `living_damage_pre`.
 - **A spawn egg.** Not covered by these recipes. **Workaround:** `/summon`, a command of your own, or natural spawning.
-- More gaps: [API gaps: entities](/api-gaps#entities).
+- More gaps: [Sunrise Gaps: entities](/api-gaps#entities).

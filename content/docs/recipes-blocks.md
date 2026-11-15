@@ -280,4 +280,4 @@ For saved data beyond block states, use a block entity. See [Block entities](/do
 
 - **A block class of your own** (Java's `extends Block`). **Not through content declarations:** a declared block copies a vanilla template. **Workaround:** pick the closest template, then add behaviour with a `BlockPart`, as in the bell above.
 - **Declaring blocks from Rust.** Blocks can also be declared from Rust with `Block::new(id, template)` in the `blocks` hook. The JSON files above are simpler for these examples: [Making a content mod](/docs/modding/how-to/content-mods).
-- More gaps by area: [API gaps: blocks](/api-gaps#blocks).
+- More gaps by area: [Sunrise Gaps: blocks](/api-gaps#blocks).

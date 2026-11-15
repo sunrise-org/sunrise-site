@@ -397,4 +397,4 @@ impl Hooks for Mod {
 
 - **Mod menu types on unsupported clients.** A client without support for the type is not sent one.
 - **A Java-style `Screen` subclass.** Use the screen hooks to draw and handle input. There are Rust `Button`, `TextField` and `Widgets` helpers in `mod_api::client::widgets`; this page uses manual drawing and clicks.
-- More gaps: [API gaps: GUI](/api-gaps#gui).
+- More gaps: [Sunrise Gaps: GUI](/api-gaps#gui).

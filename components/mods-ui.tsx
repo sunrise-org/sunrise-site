@@ -3,7 +3,7 @@ import { GitHubIcon } from "@/components/icons";
 import { format } from "@/components/i18n-text";
 import { count, type Rating } from "@/components/mods-logic";
 
-const INKS = ["#ff8fc4", "#8be0b4", "#f2c46b", "#f07a6a"];
+const INKS = ["#ff8a5c", "#8be0b4", "#f2c46b", "#f07a6a"];
 
 function hash(text: string) {
   let h = 2166136261;

@@ -2,7 +2,7 @@
 import type { Curated } from "./types";
 
 export const curated: Curated = {
-  "eyebrow": "Horizon / Native mod API",
+  "eyebrow": "Sunrise Gaps / Native mod API",
   "title": "Native mod API gaps",
   "lede": "Find which capabilities are on main, which have work in review, and where to start investigating a gap. Coverage describes the specific seam in each row. It does not certify end-to-end behavior or full NeoForge parity.",
   "reviewed": {

@@ -206,7 +206,7 @@ export function ReleaseItem({ id, t, summary, children }: { id: number; t: ListT
       <summary className="flex cursor-pointer list-none items-start gap-4 rounded-md py-5 outline-none focus-visible:ring-2 focus-visible:ring-accent [&::-webkit-details-marker]:hidden">
         <span
           aria-hidden
-          className={`mt-2 size-2 shrink-0 rounded-full transition-colors ${seen && !isSeen ? "bg-lavender shadow-[0_0_10px_#ff8fc4]" : "bg-lavender"}`}
+          className={`mt-2 size-2 shrink-0 rounded-full transition-colors ${seen && !isSeen ? "bg-lavender shadow-[0_0_10px_#ff8a5c]" : "bg-lavender"}`}
         />
         <span className="min-w-0 flex-1">{summary}</span>
         {seen &&

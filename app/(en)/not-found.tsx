@@ -1,11 +1,13 @@
 import Link from "next/link";
+import { Ferris } from "@/components/fx/ferris";
 import { getMessages } from "@/components/i18n";
 
 export default function NotFound() {
   const t = getMessages("en").notFound;
   return (
     <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center px-6 pt-32 pb-24 sm:pt-40 lg:px-10">
-      <p className="text-sm font-medium text-muted">404</p>
+      <p className="eyebrow">404</p>
+      <Ferris className="ferris-wave mt-6 h-10 w-auto self-start opacity-80" />
       <h1 className="mt-4 font-display text-[clamp(2.25rem,6vw,4rem)] leading-[1.04] font-semibold tracking-[-0.035em] text-foreground">
         <span className="block">{t.title}</span>
         <span className="text-accent block pb-1">{t.titleAccent}</span>

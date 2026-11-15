@@ -83,7 +83,7 @@ function SiteHeaderView({ locale, t, releaseIds = [], launcher = null, pathname 
           <span className="font-display text-[19px] font-semibold tracking-[-0.02em]">Sunrise</span>
         </LogoLink>
 
-        <nav aria-label={t.mainNav} className={`hidden items-center text-sm text-muted lg:flex gap-5 xl:gap-8`}>
+        <nav aria-label={t.mainNav} className={`hidden items-center text-sm font-medium text-muted lg:flex gap-5 xl:gap-8`}>
           {nav.map((item) => (
             <Link
               key={item.href}
@@ -96,7 +96,7 @@ function SiteHeaderView({ locale, t, releaseIds = [], launcher = null, pathname 
                 <>
                   <span
                     aria-hidden
-                    className="inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-lavender px-1 text-[10px] leading-none font-semibold text-foreground tabular-nums shadow-[0_0_10px_rgba(255,90,168,0.7)]"
+                    className="inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-lavender px-1 text-[10px] leading-none font-semibold text-foreground tabular-nums shadow-[0_0_10px_rgba(255,138,92,0.7)]"
                   >
                     {unseen > 9 ? "9+" : unseen}
                   </span>

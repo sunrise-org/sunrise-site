@@ -3,12 +3,13 @@ import type { ReactNode } from "react";
 import { GAME_REF, GAME_REPO, GAME_URL } from "@/components/game-repo";
 import { getMessages, rich, type Locale } from "@/components/i18n";
 import { format, localePath } from "@/components/i18n-text";
+import { DustField } from "@/components/fx/dust-field";
 import { JsonLd } from "@/components/json-ld";
 import { UPSTREAM_URL } from "@/components/links";
 import { absolute } from "@/components/site";
 import { BOARD_URL } from "@/lib/api-gaps/links";
 
-const LINK = "sun-link text-[#ffd2e4]";
+const LINK = "sun-link text-[#ffc49a]";
 
 const plain = (text: string) => text.replace(/<\/?\w+>/g, "");
 
@@ -35,7 +36,7 @@ export function FaqPage({ locale }: { locale: Locale }) {
   const items = t.items.map((item) => ({ q: item.q, a: format(item.a, values) }));
 
   return (
-    <main>
+    <main className="relative isolate">
       <JsonLd
         data={{
           "@type": "FAQPage",
@@ -48,8 +49,9 @@ export function FaqPage({ locale }: { locale: Locale }) {
           })),
         }}
       />
+      <DustField className="absolute inset-x-0 top-0 -z-10 h-[30rem] w-full fade-bottom" />
       <article className="mx-auto w-full max-w-3xl px-6 pt-32 pb-20 text-[16px] leading-relaxed text-pretty text-white/70 sm:pt-40 sm:pb-28 lg:px-10">
-        <p className="text-sm font-medium text-white/60">{t.kicker}</p>
+        <p className="eyebrow">{t.kicker}</p>
         <h1 className="mt-4 font-display text-[clamp(2.25rem,6vw,4rem)] leading-[1.04] font-semibold tracking-[-0.035em] text-white">
           <span className="block">{t.titleA}</span>
           <span className="text-accent block pb-1">{t.titleB}</span>
@@ -66,6 +68,9 @@ export function FaqPage({ locale }: { locale: Locale }) {
                 source: out(`${GAME_URL}/tree/${GAME_REF}`),
                 mods: inSite("/mods"),
                 apigaps: inSite("/api-gaps"),
+                gaps: inSite("/api-gaps"),
+                licence: out("https://polyformproject.org/licenses/shield/1.0.0"),
+                docs: inSite("/docs/make-a-mod"),
                 issues: out(`${GAME_URL}/issues`),
                 board: out(BOARD_URL),
                 privacy: inSite("/privacy"),

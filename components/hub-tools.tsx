@@ -161,7 +161,7 @@ export function BugReport({ version }: { version: string }) {
       <div className="mt-6 flex flex-wrap items-center gap-2">
         <button
           type="submit"
-          className="inline-flex h-10 items-center gap-2 rounded-lg bg-brand px-4 text-sm font-medium text-white transition-colors outline-none hover:bg-brand-hover focus-visible:ring-2 focus-visible:ring-accent"
+          className="inline-flex h-10 items-center gap-2 rounded-lg bg-brand px-4 text-sm font-medium text-background transition-colors outline-none hover:bg-brand-hover focus-visible:ring-2 focus-visible:ring-accent"
         >
           Open the issue on GitHub
           <ExternalLinkIcon className="size-3.5 opacity-70" />
@@ -199,7 +199,7 @@ export function BugReport({ version }: { version: string }) {
 }
 
 const CHIP_BUTTON = "h-8 rounded-lg px-3 text-[13px] font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent";
-const CHIP_ON = "bg-brand/30 text-accent-ink ring-1 ring-accent/40 ring-inset";
+const CHIP_ON = "bg-neon/30 text-accent-ink ring-1 ring-accent/40 ring-inset";
 const CHIP_OFF = "bg-surface/80 text-muted hover:bg-lavender hover:text-foreground";
 
 export function BoardFilter({ items }: { items: { id: string; title: string }[] }) {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
-import { HorizonScene } from "@/components/horizon-scene";
+import { WindowScene } from "@/components/window-scene";
 import { AppleIcon, DownloadIcon, GitHubIcon, LinuxIcon, RustIcon, WindowsIcon } from "@/components/icons";
 import { getLauncherDownloads, getLauncherRelease, launcherBuild } from "@/components/github-releases";
 import { format, getMessages, NUMBER_LOCALE, rich, type Locale } from "@/components/i18n";
@@ -23,13 +23,13 @@ export async function Hero({ locale }: { locale: Locale }) {
   const [release, downloads] = await Promise.all([getLauncherRelease(), getLauncherDownloads()]);
   const launcher = launcherBuild(release);
   return (
-    <section className="relative isolate flex min-h-svh flex-col overflow-hidden">
-      <HorizonScene className="absolute inset-0 -z-10" />
+    <section className="relative isolate flex min-h-[max(100svh,40rem)] flex-col max-lg:min-h-[max(100svh,66rem)]">
+      <WindowScene className="absolute inset-0 -z-10 h-full w-full lg:[mask-image:linear-gradient(#000_85%,transparent)]" />
       <div aria-hidden className="h-18 shrink-0" />
 
-      <div className="mx-auto grid w-full max-w-6xl flex-1 content-center items-start gap-x-16 gap-y-16 px-6 pt-12 pb-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:items-center lg:px-10 xl:gap-x-20">
-        <div className="@container max-w-2xl">
-          <p className="rise flex flex-wrap items-center gap-x-2 gap-y-1.5 text-sm font-medium text-muted" style={delay(0)}>
+      <div className="mx-auto w-full max-w-7xl flex-1 px-6 pt-14 pb-20 sm:pt-24 lg:px-12">
+        <div className="@container max-w-[28rem]">
+          <p className="rise inline-flex flex-wrap items-center gap-x-2 gap-y-1.5 rounded-full border border-line bg-surface/70 py-1 pr-3.5 pl-2 text-[13px] text-muted" style={delay(0)}>
             <span className="inline-flex items-center gap-2">
               <Image src="/minecraft.webp" alt="" width={64} height={71} className="h-[18px] w-auto" />
               Minecraft: Java Edition 26.3
@@ -55,10 +55,10 @@ export async function Hero({ locale }: { locale: Locale }) {
           </p>
 
           <h1
-            className="rise mt-5 font-display text-[clamp(2rem,10.4cqi,4.75rem)] leading-[1.02] font-semibold tracking-[-0.035em] text-foreground"
+            aria-label={`Sunrise: ${t.title} ${t.titleAccent}`}
+            className="rise mt-6 font-display text-[clamp(2.25rem,9cqi,3.15rem)] leading-[1.03] font-semibold tracking-[-0.035em]"
             style={delay(80)}
           >
-            <span className="sr-only">Sunrise: </span>
             <span className="block">{t.title}</span>
             <span className="text-accent block pb-1">{t.titleAccent}</span>
           </h1>
@@ -70,14 +70,14 @@ export async function Hero({ locale }: { locale: Locale }) {
           <div className="rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center" style={delay(240)}>
             <LauncherLink
               build={launcher}
-              className="sun-button soft-press inline-flex h-12 items-center justify-center gap-2.5 rounded-[10px] bg-brand px-5 text-[15px] font-medium text-white hover:bg-brand-hover"
+              className="sun-button soft-press inline-flex h-11 items-center justify-center gap-2.5 rounded-lg bg-brand px-5 text-[14.5px] font-medium text-background hover:bg-brand-hover"
             >
               <DownloadIcon className="size-[18px]" />
               {t.download}
             </LauncherLink>
             <a
               href={GITHUB_URL}
-              className="glass-panel soft-press inline-flex h-12 items-center justify-center gap-2.5 rounded-[10px] border border-line px-5 text-[15px] font-medium text-foreground"
+              className="soft-press inline-flex h-11 items-center justify-center gap-2.5 rounded-lg border border-line bg-surface/80 px-5 text-[14.5px] font-medium text-foreground transition-colors hover:border-muted/40 hover:bg-sky-surface"
             >
               <GitHubIcon className="size-[17px]" />
               {t.github}
@@ -114,10 +114,15 @@ export async function Hero({ locale }: { locale: Locale }) {
               )}
             </span>
           </div>
+          <ul className="rise mt-6 flex flex-wrap gap-x-5 gap-y-1 text-[13px] text-dim" style={delay(360)}>
+            {t.facts.map((fact) => (
+              <li key={fact}>
+                <span className="text-[#4cb782]">✓</span> {fact}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-
-      <div aria-hidden className="h-[clamp(180px,30svh,320px)] shrink-0" />
     </section>
   );
 }

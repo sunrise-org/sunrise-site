@@ -199,4 +199,4 @@ There are hundreds of hooks and Part methods. To find one:
 - **Search by the NeoForge or Fabric event you know:** hooks with counterparts name them in their documentation. See [Writing hooks](/docs/modding/start/writing-hooks) for listener rules.
 - **Read every hook with its fields:** in a checkout of [Sunrise's repository](https://github.com/sunrise-org/sunrise), `cargo doc -p horizon-mod-api --open`, then open the `Hooks` trait.
 - **Read how hooks fit together:** [Hooks and the Host](/docs/modding/concepts/hooks-and-the-host).
-- **Nothing fits?** [API gaps: events](/api-gaps#events) lists what is missing. [Injections](/docs/modding/concepts/injections) use `[[inject]]` listeners at published API points; they do not compile game code.
+- **Nothing fits?** [Sunrise Gaps: events](/api-gaps#events) lists what is missing. [Injections](/docs/modding/concepts/injections) use `[[inject]]` listeners at published API points; they do not compile game code.

@@ -1,26 +1,34 @@
-import { Geist, Geist_Mono, Sora } from "next/font/google";
+import { Inter, JetBrains_Mono, Silkscreen, Space_Grotesk } from "next/font/google";
 import { Suspense } from "react";
 import type { ReactNode } from "react";
 import { getLauncherRelease, getReleases, launcherBuild } from "@/components/github-releases";
 import { DawnBackdrop } from "@/components/dawn-backdrop";
+import { CursorFx } from "@/components/fx/cursor-fx";
 import { getMessages, type Locale } from "@/components/i18n";
 import { PointerGlow } from "@/components/pointer-glow";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
-const geist = Geist({
+// Inter for text, Space Grotesk for headings, Silkscreen for the small labels, JetBrains Mono for code; the Geist variable names stay for the
+// CSS that reads them.
+const geist = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const display = Space_Grotesk({
+  variable: "--font-display-face",
   subsets: ["latin"],
 });
 
-// Headings: a geometric face of Sunrise's own, so the site no longer reads as playhorizon.dev (Bricolage).
-const sora = Sora({
-  variable: "--font-sora",
+const pixel = Silkscreen({
+  variable: "--font-pixel-face",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const geistMono = JetBrains_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -30,12 +38,13 @@ export function SiteShell({ locale, children }: { locale: Locale; children: Reac
   return (
     <html
       lang={locale}
-      className={`${geist.variable} ${geistMono.variable} ${sora.variable} h-full antialiased`}
+      className={`${geist.variable} ${geistMono.variable} ${display.variable} ${pixel.variable} h-full antialiased`}
     >
       {/* Browser extensions (e.g. Bitdefender) add attributes to <body> before React loads. */}
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <DawnBackdrop />
         <PointerGlow />
+        <CursorFx />
         <Suspense fallback={<SiteHeader locale={locale} t={getMessages(locale).header} />}>
           <SiteNavigation locale={locale} />
         </Suspense>
