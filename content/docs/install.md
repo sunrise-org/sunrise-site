@@ -47,9 +47,9 @@ Every release also carries `SHA256SUMS` and a signature, `SHA256SUMS.sig`, if yo
 
 The game opens on vanilla's title screen. Your worlds, options and logs live in the game folder, which is not inside a version's folder, so updating or removing a version never touches them:
 
-- Linux: `~/.local/share/horizon`
-- macOS: `~/Library/Application Support/horizon`
-- Windows: `%APPDATA%\horizon`
+- Linux: `~/.local/share/sunrise`
+- macOS: `~/Library/Application Support/sunrise`
+- Windows: `%APPDATA%\sunrise`
 
 > [!NOTE] Sign in to play
 > Without a signed-in account, the launcher shows **Sign in to play**. Choose **Open link**, enter the code it shows on Microsoft's page in your browser, and the launcher goes on by itself. Until an account that owns Java Edition is signed in, **Play** asks you to sign in instead of starting the game. Once one is, you can also play under an offline name.
