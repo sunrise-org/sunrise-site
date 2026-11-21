@@ -38,8 +38,7 @@
     "linksLabel": "More",
     "links": {
       "faq": "FAQ",
-      "apiGaps": "API gaps",
-      "moddingTeam": "Modding team"
+      "apiGaps": "API gaps"
     },
     "madeInRust": "Made in the open, in Rust."
   },
@@ -88,7 +87,7 @@
         "title": "Credits",
         "built": "Sunrise is built on <horizon>Horizon</horizon> by the horizon-rust contributors.",
         "api": "The native mod API follows <neoforge>NeoForge</neoforge>'s design and docs, with thanks.",
-        "modders": "<ari>Ari (arismoko)</ari>, <xmilon>Xmilon</xmilon> and <levzzz>levzzz</levzzz> build the mod API with <team>the modding team</team>, in <repo>arismoko/horizon</repo>.",
+        "modders": "<ari>Ari (arismoko)</ari>, <xmilon>Xmilon</xmilon> and <levzzz>levzzz</levzzz> build the mod API, in <repo>arismoko/horizon</repo>.",
         "profiler": "Profiler: with help from <gigger>gigger</gigger>"
       },
       "team": {

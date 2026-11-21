@@ -98,10 +98,6 @@ export async function TeamPage() {
         <Link href="/#contributors" className="sun-link text-accent-ink">
           Horizon contributors
         </Link>
-        , and the people behind the mod API on{" "}
-        <Link href="/modding-team" className="sun-link text-accent-ink">
-          the modding team
-        </Link>
         .
       </p>
     </main>

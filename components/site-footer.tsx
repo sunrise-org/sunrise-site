@@ -19,7 +19,6 @@ const LEGAL = [{ href: "/privacy", key: "privacy" }] as const;
 const MORE = [
   { href: "/faq", key: "faq" },
   { href: "/api-gaps", key: "apiGaps" },
-  { href: "/modding-team", key: "moddingTeam" },
 ] as const;
 
 const LEGAL_LINK =

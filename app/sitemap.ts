@@ -48,7 +48,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
     { url: absolute("/mods/policy"), changeFrequency: "monthly", priority: 0.3 },
     ...inEveryLanguage("/faq", { changeFrequency: "monthly", priority: 0.6 }),
-    { url: absolute("/modding-team"), changeFrequency: "monthly", priority: 0.4 },
     { url: absolute("/privacy"), changeFrequency: "yearly", priority: 0.2 },
   ];
 }

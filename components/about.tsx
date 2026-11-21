@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ChipIcon, CodeIcon, DriveIcon, ExternalLinkIcon, SunriseLogo } from "@/components/icons";
 import { getMessages, type Locale } from "@/components/i18n";
 import { rich } from "@/components/i18n-text";
@@ -72,11 +71,6 @@ export function About({ locale }: { locale: Locale }) {
                     ari: out(MOD_API_AUTHOR_URL),
                     xmilon: out(profileUrl("Xmilon")),
                     levzzz: out(profileUrl("levzzz5154")),
-                    team: (text) => (
-                      <Link href="/modding-team" className={CREDIT_LINK}>
-                        {text}
-                      </Link>
-                    ),
                     repo: out(MOD_API_REPO_URL),
                   })}
                 </li>
